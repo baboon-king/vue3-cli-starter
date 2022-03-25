@@ -94,15 +94,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import { withDefaults, defineProps } from "vue";
 
-export default defineComponent({
-  name: "HelloWorld",
-  props: {
-    msg: String,
-  },
-});
+interface Props {
+  msg: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {});
+console.log(props.msg);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
